@@ -1,0 +1,3587 @@
+/* ============================================================
+   CUSTOM BUILD — Estilos específicos de la página de curso
+   Prefijo: custom-
+   Scope:   body.page-custom-build
+   Depende de style.css (tokens y componentes globales)
+   ============================================================ */
+
+/* ============================================================
+   VARIABLES LOCALES
+   Extendemos las de style.css sin reemplazarlas
+   ============================================================ */
+body.page-custom-build {
+  /* Contenedor: igual que la home */
+  --cb-max: 1200px;
+  --cb-side: clamp(1.5rem, 3vw, 2.5rem);
+
+  /* Espaciado vertical general */
+  --cb-section: clamp(3.75rem, 6vw, 5.75rem);
+
+  /* Escala tipográfica */
+  --cb-title-hero: clamp(3.5rem, 6.2vw, 6.3rem);
+  --cb-title-section: clamp(1.8rem, 3.4vw, 2.75rem);
+  --cb-title-feature: clamp(2rem, 4vw, 3.2rem);
+  --cb-title-small: clamp(1.05rem, 1.6vw, 1.3rem);
+
+  --cb-body: 0.9rem;
+  --cb-small: 0.7rem;
+
+  /* Espaciados internos */
+  --cb-space-sm: 0.75rem;
+  --cb-space-md: 1.35rem;
+  --cb-space-lg: 2.5rem;
+}
+
+/* ============================================================
+   UTILIDADES LOCALES
+   ============================================================ */
+.custom-eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-wood-brown);
+  margin-bottom: 1rem;
+}
+
+.custom-eyebrow--light {
+  color: var(--color-bg-light);
+  opacity: 0.65;
+}
+
+
+/* ============================================================
+   S1 — HERO
+   ============================================================ */
+.page-custom-build .custom-hero {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  min-height: 100svh;
+}
+
+/* --- Columna izquierda: texto --- */
+.page-custom-build .custom-hero__col--text {
+  background: var(--color-ink);
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(7rem, 16vh, 10rem) var(--cb-side) clamp(3rem, 8vh, 5rem);
+}
+
+.page-custom-build .custom-hero__content {
+  max-width: 480px;
+}
+
+.page-custom-build .custom-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.6rem, 8vw, 7.5rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--color-warm-white);
+  margin-bottom: 1.8rem;
+}
+
+.page-custom-build .custom-hero__desc {
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--color-warm-white);
+  max-width: 28ch;
+  margin-bottom: 2.5rem;
+}
+
+.page-custom-build .custom-hero__meta {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 2.5rem;
+}
+
+.page-custom-build .custom-hero__meta-label {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-warm-grey);
+}
+
+.page-custom-build .custom-hero__price {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-bg-light);
+  letter-spacing: 0.01em;
+}
+
+.page-custom-build .custom-hero__actions {
+  margin-bottom: 1.2rem;
+}
+
+.page-custom-build .custom-hero__microtext {
+  font-size: 0.8125rem;
+  color: var(--color-warm-grey);
+  letter-spacing: 0.01em;
+}
+
+/* --- Columna derecha: imagen --- */
+.page-custom-build .custom-hero__col--media {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-custom-build .custom-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* --- Mobile --- */
+@media (max-width: 640px) {
+  .page-custom-build .custom-hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 100svh;
+  }
+
+  .page-custom-build .custom-hero__col--text {
+    align-items: flex-start;
+    padding: clamp(6rem, 22vw, 8rem) var(--cb-side) 2.5rem;
+  }
+
+  .page-custom-build .custom-hero__col--media {
+    min-height: 45vw;
+    max-height: 55vw;
+  }
+
+  .page-custom-build .custom-hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* --- Tablet --- */
+@media (min-width: 641px) and (max-width: 880px) {
+  .page-custom-build .custom-hero {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+
+/* ============================================================
+   S2 — LA PROMESA
+   ============================================================ */
+.page-custom-build .custom-promise {
+  background: var(--color-warm-white);
+  padding: var(--cb-section) var(--cb-side);
+}
+
+.page-custom-build .custom-promise__inner {
+  max-width: var(--cb-max);
+  margin: 0 auto;
+}
+
+.page-custom-build .custom-promise__head {
+  max-width: 640px;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.page-custom-build .custom-promise__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5.5vw, 3.8rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-top: 0.5rem;
+}
+
+.page-custom-build .custom-promise__title--light {
+  font-weight: 400;
+  color: var(--color-ink);
+}
+
+.page-custom-build .custom-promise__title--strong {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.page-custom-build .custom-promise__media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.page-custom-build .custom-promise__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.page-custom-build .custom-promise__media:hover .custom-promise__img {
+  transform: scale(1.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-custom-build .custom-promise__img {
+    transition: none;
+  }
+}
+
+.page-custom-build .custom-promise__copy {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.75;
+  color: rgba(21, 21, 21, 0.75);
+  max-width: 52ch;
+}
+
+
+/* ============================================================
+   S3 — RECORRIDO DEL PROGRAMA
+   ============================================================ */
+.page-custom-build .custom-process {
+  background: var(--color-ink);
+  padding: var(--cb-section) var(--cb-side);
+}
+
+.page-custom-build .custom-process__inner {
+  max-width: var(--cb-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(3rem, 6vw, 5rem);
+}
+
+.page-custom-build .custom-process__head {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.page-custom-build .custom-process__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-warm-white);
+  margin-top: 0.5rem;
+}
+
+.page-custom-build .custom-process__title em {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.page-custom-build .custom-process__right {
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+}
+
+/* ============================================================
+   PROCESO — VIDEO
+   ============================================================ */
+
+.page-custom-build .custom-process__right {
+  position: relative;
+
+  overflow: hidden;
+
+  aspect-ratio: 4 / 5;
+
+  border-radius: 4px;
+
+  background: #0f0f0f;
+}
+
+/* Video principal */
+
+.page-custom-build .custom-process__video {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  background: #0f0f0f;
+}
+
+/*
+  Oscurecimiento muy leve.
+  Ayuda a integrar la etiqueta y el botón,
+  sin ocultar el contenido del video.
+*/
+
+.page-custom-build .custom-process__video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(15, 15, 15, 0.05) 45%,
+      rgba(15, 15, 15, 0.42) 100%
+    );
+}
+
+/* Etiqueta inferior */
+
+.page-custom-build .custom-process__video-label {
+  position: absolute;
+  z-index: 2;
+
+  left: 1rem;
+  bottom: 1rem;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+
+  padding: 0.55rem 0.75rem;
+
+  border: 1px solid rgba(250, 248, 242, 0.18);
+  border-radius: 999px;
+
+  background: rgba(15, 15, 15, 0.55);
+  color: rgba(250, 248, 242, 0.85);
+
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  backdrop-filter: blur(8px);
+}
+
+.page-custom-build .custom-process__video-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--color-wood-brown);
+}
+
+/* Control de pausa y reproducción */
+
+.page-custom-build .custom-process__video-control {
+  position: absolute;
+  z-index: 3;
+
+  right: 1rem;
+  bottom: 1rem;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(250, 248, 242, 0.22);
+  border-radius: 50%;
+
+  background: rgba(15, 15, 15, 0.58);
+  color: var(--color-warm-white);
+
+  font-size: 0.7rem;
+
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.page-custom-build .custom-process__video-control:hover {
+  background: rgba(15, 15, 15, 0.85);
+  transform: scale(1.05);
+}
+
+.page-custom-build .custom-process__video-control:focus-visible {
+  outline: 2px solid var(--color-wood-brown);
+  outline-offset: 3px;
+}
+
+.page-custom-build .custom-process__play-icon {
+  display: none;
+  margin-left: 2px;
+}
+
+/* Cuando el video está pausado */
+
+.page-custom-build
+.custom-process__video-control.is-paused
+.custom-process__pause-icon {
+  display: none;
+}
+
+.page-custom-build
+.custom-process__video-control.is-paused
+.custom-process__play-icon {
+  display: inline;
+}
+
+/* Tablet */
+
+@media (max-width: 880px) {
+  .page-custom-build .custom-process__right {
+    aspect-ratio: 16 / 9;
+    max-height: 520px;
+  }
+
+  .page-custom-build .custom-process__video {
+    object-position: center;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 640px) {
+  .page-custom-build .custom-process__right {
+    min-height: 300px;
+    max-height: none;
+
+    aspect-ratio: 4 / 3;
+  }
+
+  .page-custom-build .custom-process__video-label {
+    left: 0.75rem;
+    bottom: 0.75rem;
+
+    max-width: calc(100% - 4.5rem);
+  }
+
+  .page-custom-build .custom-process__video-control {
+    right: 0.75rem;
+    bottom: 0.75rem;
+  }
+}
+
+/* — Timeline — */
+.page-custom-build .custom-timeline {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.page-custom-build .custom-timeline__item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.page-custom-build .custom-timeline__marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 0.15em;
+}
+
+.page-custom-build .custom-timeline__num {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-wood-brown);
+  line-height: 1;
+  width: 1.8rem;
+  text-align: center;
+}
+
+.page-custom-build .custom-timeline__line {
+  display: block;
+  width: 1px;
+  flex: 1;
+  min-height: 3rem;
+  background: rgba(250, 248, 242, 0.12);
+  margin-top: 0.6rem;
+}
+
+.page-custom-build .custom-timeline__body {
+  padding-bottom: 2.5rem;
+}
+
+.page-custom-build .custom-timeline__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-weight: 600;
+  color: var(--color-warm-white);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.page-custom-build .custom-timeline__desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--color-warm-grey);
+  max-width: 40ch;
+}
+
+/* Animación secuencial de los pasos */
+.page-custom-build .reveal-step {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.page-custom-build .reveal-step.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (min-width: 881px) {
+  .page-custom-build .custom-process__inner {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .page-custom-build .custom-process__right {
+    position: sticky;
+    top: calc(var(--header-h, 70px) + 2rem);
+  }
+}
+
+@media (max-width: 880px) {
+  .page-custom-build .custom-process__right {
+    order: 3;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+
+/* ============================================================
+   S4 — CONFIGURADOR INTERACTIVO
+   ============================================================ */
+.page-custom-build .custom-config {
+  background: var(--color-bg-light);
+  padding: var(--cb-section) var(--cb-side);
+}
+
+.page-custom-build .custom-config__inner {
+  max-width: var(--cb-max);
+  margin: 0 auto;
+}
+
+.page-custom-build .custom-config__head {
+  margin-bottom: clamp(3rem, 7vw, 5rem);
+  max-width: 640px;
+}
+
+.page-custom-build .custom-config__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.page-custom-build .custom-config__title em {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.page-custom-build .custom-config__lead {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(21, 21, 21, 0.65);
+}
+
+/* Layout */
+.page-custom-build .custom-config__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 881px) {
+  .page-custom-build .custom-config__layout {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(3rem, 6vw, 6rem);
+    align-items: start;
+  }
+
+  .page-custom-build .custom-config__visual {
+    position: sticky;
+    top: calc(var(--header-h, 70px) + 2rem);
+  }
+}
+
+/* Visual / guitarra */
+.page-custom-build .custom-config__guitar-wrap {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: var(--color-ink);
+  margin-bottom: 1.5rem;
+}
+
+.page-custom-build .custom-config__guitar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.6s ease;
+}
+
+.page-custom-build .custom-config__guitar-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: background 0.6s ease;
+}
+
+/* Summary */
+.page-custom-build .custom-config__summary {
+  border: 1px solid rgba(21, 21, 21, 0.1);
+  border-radius: 4px;
+  padding: 1.4rem 1.6rem;
+  background: var(--color-warm-white);
+}
+
+.page-custom-build .custom-config__summary-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-wood-brown);
+  margin-bottom: 1rem;
+}
+
+.page-custom-build .custom-config__summary-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1.5rem;
+}
+
+.page-custom-build .custom-config__summary-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.page-custom-build .custom-config__summary-row dt {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-warm-grey);
+  text-transform: uppercase;
+}
+
+.page-custom-build .custom-config__summary-row dd {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+/* Panel de opciones */
+.page-custom-build .custom-config__group {
+  border: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.page-custom-build .custom-config__group-label {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(21, 21, 21, 0.08);
+}
+
+.page-custom-build .custom-config__group-num {
+  color: var(--color-wood-brown);
+}
+
+/* Botones de opción genéricos */
+.page-custom-build .custom-config__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.page-custom-build .custom-config__btn {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.7rem 1.2rem;
+  border-radius: 3px;
+  border: 1px solid rgba(21, 21, 21, 0.18);
+  background: var(--color-warm-white);
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: border-color 0.3s, background 0.3s, color 0.3s;
+  min-height: 44px;
+  letter-spacing: 0.01em;
+}
+
+.page-custom-build .custom-config__btn:hover {
+  border-color: var(--color-ink);
+}
+
+.page-custom-build .custom-config__btn.is-selected,
+.page-custom-build .custom-config__btn[aria-pressed="true"] {
+  background: var(--color-ink);
+  color: var(--color-warm-white);
+  border-color: var(--color-ink);
+}
+
+.page-custom-build .custom-config__btn:focus-visible {
+  outline: 2px solid var(--color-wood-brown);
+  outline-offset: 3px;
+}
+
+/* Botones con textura de madera */
+.page-custom-build .custom-config__options--textures {
+  gap: 0.75rem;
+}
+
+.page-custom-build .custom-config__btn--texture {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem;
+  text-align: left;
+  width: 100%;
+  flex-direction: row;
+}
+
+.page-custom-build .custom-config__texture {
+  width: 48px;
+  height: 48px;
+  border-radius: 3px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.page-custom-build .custom-config__texture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-custom-build .custom-config__option-name {
+  font-weight: 600;
+  display: block;
+  font-size: 0.9rem;
+}
+
+.page-custom-build .custom-config__option-sub {
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--color-warm-grey);
+  display: block;
+}
+
+.page-custom-build .custom-config__btn--texture.is-selected .custom-config__option-sub {
+  color: rgba(250, 248, 242, 0.7);
+}
+
+/* Pie del configurador */
+.page-custom-build .custom-config__footer {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(21, 21, 21, 0.08);
+}
+
+.page-custom-build .custom-config__footer-note {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: rgba(21, 21, 21, 0.65);
+  max-width: 44ch;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+
+/* ============================================================
+   S5 — BLOQUE EMOCIONAL
+   ============================================================ */
+.page-custom-build .custom-craft {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.page-custom-build .custom-craft__media {
+  position: absolute;
+  inset: 0;
+}
+
+.page-custom-build .custom-craft__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.page-custom-build .custom-craft__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(21, 21, 21, 0.1)  0%,
+    rgba(21, 21, 21, 0.55) 50%,
+    rgba(21, 21, 21, 0.85) 100%
+  );
+}
+
+.page-custom-build .custom-craft__content {
+  position: relative;
+  z-index: 2;
+  padding: var(--cb-section) var(--cb-side);
+  max-width: calc(var(--cb-max) + 2 * var(--cb-side));
+  width: 100%;
+  margin: 0 auto;
+}
+
+.page-custom-build .custom-craft__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5.5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-warm-white);
+  max-width: 16ch;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-custom-build .custom-craft__text {
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  line-height: 1.75;
+  color: rgba(250, 248, 242, 0.78);
+  max-width: 44ch;
+}
+
+
+/* ============================================================
+   S6 — QUÉ INCLUYE
+   ============================================================ */
+.page-custom-build .custom-includes {
+  background: var(--color-ink);
+  padding: var(--cb-section) var(--cb-side);
+}
+
+.page-custom-build .custom-includes__inner {
+  max-width: var(--cb-max);
+  margin: 0 auto;
+}
+
+.page-custom-build .custom-includes__head {
+  margin-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+.page-custom-build .custom-includes__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-warm-white);
+  margin-top: 0.5rem;
+}
+
+.page-custom-build .custom-benefits {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 3rem) clamp(2rem, 4vw, 4rem);
+}
+
+@media (min-width: 881px) {
+  .page-custom-build .custom-benefits {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .page-custom-build .custom-benefits {
+    grid-template-columns: 1fr;
+  }
+}
+
+.page-custom-build .custom-benefits__item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.page-custom-build .custom-benefits__icon {
+  color: var(--color-wood-brown);
+  flex-shrink: 0;
+}
+
+.page-custom-build .custom-benefits__heading {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-warm-white);
+  letter-spacing: -0.005em;
+}
+
+.page-custom-build .custom-benefits__desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--color-warm-grey);
+}
+
+
+/* ============================================================
+   S7 — PROYECTOS
+   ============================================================ */
+.page-custom-build .custom-projects {
+  background: var(--color-bg-light);
+  padding: var(--cb-section) 0;
+}
+
+.page-custom-build .custom-projects__head {
+  padding: 0 var(--cb-side);
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  max-width: 640px;
+}
+
+.page-custom-build .custom-projects__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--color-ink);
+  margin-top: 0.5rem;
+}
+
+/* Slider */
+.page-custom-build .custom-projects__slider {
+  position: relative;
+}
+
+.page-custom-build .custom-projects__track {
+  display: flex;
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: var(--cb-side);
+  padding: 0 var(--cb-side) 1rem;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.page-custom-build .custom-projects__track::-webkit-scrollbar {
+  display: none;
+}
+
+.page-custom-build .custom-project-card {
+  flex: 0 0 min(72%, 280px);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 881px) {
+  .page-custom-build .custom-project-card {
+    flex: 0 0 min(30%, 320px);
+  }
+}
+
+.page-custom-build .custom-project-card__media {
+  aspect-ratio: 3 / 4;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--color-ink);
+}
+
+.page-custom-build .custom-project-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (hover: hover) {
+  .page-custom-build .custom-project-card__media:hover img {
+    transform: scale(1.04);
+  }
+}
+
+.page-custom-build .custom-project-card__name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  letter-spacing: -0.005em;
+  margin-bottom: 0.2rem;
+}
+
+.page-custom-build .custom-project-card__maker {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-warm-grey);
+  margin-bottom: 0.5rem;
+}
+
+.page-custom-build .custom-project-card__tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.page-custom-build .custom-project-card__tags li {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(21, 21, 21, 0.14);
+  color: var(--color-ink);
+}
+
+/* Controles del carrusel */
+.page-custom-build .custom-projects__controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding: 0 var(--cb-side);
+}
+
+.page-custom-build .custom-projects__btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(21, 21, 21, 0.18);
+  background: transparent;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+  color: var(--color-ink);
+}
+
+.page-custom-build .custom-projects__btn:hover:not(:disabled) {
+  background: var(--color-ink);
+  color: var(--color-warm-white);
+  border-color: var(--color-ink);
+}
+
+.page-custom-build .custom-projects__btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.page-custom-build .custom-projects__btn:focus-visible {
+  outline: 2px solid var(--color-wood-brown);
+  outline-offset: 3px;
+}
+
+
+/* ============================================================
+   S8 — PREGUNTAS FRECUENTES
+   ============================================================ */
+.page-custom-build .custom-faq {
+  background: var(--color-warm-white);
+  padding: var(--cb-section) var(--cb-side);
+}
+
+.page-custom-build .custom-faq__inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.page-custom-build .custom-faq__head {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.page-custom-build .custom-faq__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--color-ink);
+  margin-top: 0.5rem;
+}
+
+/* Acordeón */
+.page-custom-build .custom-accordion {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(21, 21, 21, 0.1);
+}
+
+.page-custom-build .custom-accordion__item {
+  border-bottom: 1px solid rgba(21, 21, 21, 0.1);
+}
+
+.page-custom-build .custom-accordion__term {
+  margin: 0;
+}
+
+.page-custom-build .custom-accordion__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.4rem 0;
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  font-weight: 600;
+  color: var(--color-ink);
+  text-align: left;
+  cursor: pointer;
+  background: none;
+  border: none;
+  letter-spacing: -0.005em;
+  transition: color 0.3s;
+}
+
+.page-custom-build .custom-accordion__trigger:hover {
+  color: var(--color-wood-brown);
+}
+
+.page-custom-build .custom-accordion__trigger:focus-visible {
+  outline: 2px solid var(--color-wood-brown);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.page-custom-build .custom-accordion__icon {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--color-wood-brown);
+  flex-shrink: 0;
+  line-height: 1;
+  transition: transform 0.3s;
+}
+
+.page-custom-build .custom-accordion__panel {
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.35s ease;
+  max-height: 500px;
+  opacity: 1;
+}
+
+.page-custom-build .custom-accordion__panel--closed {
+  max-height: 0;
+  opacity: 0;
+}
+
+.page-custom-build .custom-accordion__body {
+  padding-bottom: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: rgba(21, 21, 21, 0.72);
+  max-width: 60ch;
+}
+
+
+/* ============================================================
+   S9 — CTA FINAL
+   ============================================================ */
+.page-custom-build .custom-final-cta {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.page-custom-build .custom-final-cta__media {
+  position: absolute;
+  inset: 0;
+}
+
+.page-custom-build .custom-final-cta__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.page-custom-build .custom-final-cta__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(21, 21, 21, 0.72);
+}
+
+.page-custom-build .custom-final-cta__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--cb-section) var(--cb-side);
+  max-width: 700px;
+}
+
+.page-custom-build .custom-final-cta__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5.5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--color-warm-white);
+  margin-bottom: 2rem;
+}
+
+.page-custom-build .custom-final-cta__note {
+  font-size: 0.9rem;
+  color: rgba(250, 248, 242, 0.6);
+  margin-top: 1.2rem;
+  letter-spacing: 0.01em;
+}
+
+
+/* ============================================================
+   S10 — CONTACTO / FORMULARIO
+   ============================================================ */
+.page-custom-build .custom-contact {
+  background: var(--color-bg-light);
+  padding: var(--cb-section) var(--cb-side);
+  border-top: 1px solid rgba(21, 21, 21, 0.07);
+}
+
+.page-custom-build .custom-contact__inner {
+  max-width: var(--cb-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(3rem, 6vw, 5rem);
+}
+
+@media (min-width: 881px) {
+  .page-custom-build .custom-contact__inner {
+    grid-template-columns: 1fr 1.2fr;
+    align-items: start;
+  }
+}
+
+.page-custom-build .custom-contact__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  margin-bottom: 1rem;
+}
+
+.page-custom-build .custom-contact__lead {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(21, 21, 21, 0.7);
+  max-width: 42ch;
+  margin-bottom: 2rem;
+}
+
+.page-custom-build .custom-contact__direct {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Formulario */
+.page-custom-build .custom-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.page-custom-build .custom-form__row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+@media (min-width: 641px) {
+  .page-custom-build .custom-form__row--half {
+    flex-direction: row;
+  }
+
+  .page-custom-build .custom-form__row--half .custom-form__field {
+    flex: 1;
+  }
+}
+
+.page-custom-build .custom-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.page-custom-build .custom-form__label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-ink);
+}
+
+.page-custom-build .custom-form__optional {
+  font-weight: 400;
+  color: var(--color-warm-grey);
+}
+
+.page-custom-build .custom-form__required {
+  color: var(--color-wood-brown);
+}
+
+.page-custom-build .custom-form__input,
+.page-custom-build .custom-form__select,
+.page-custom-build .custom-form__textarea {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-ink);
+  background: var(--color-warm-white);
+  border: 1px solid rgba(21, 21, 21, 0.16);
+  border-radius: 3px;
+  padding: 0.85rem 1rem;
+  min-height: 44px;
+  transition: border-color 0.3s;
+  width: 100%;
+  appearance: none;
+}
+
+.page-custom-build .custom-form__select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A6A29A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.page-custom-build .custom-form__textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.page-custom-build .custom-form__input:focus,
+.page-custom-build .custom-form__select:focus,
+.page-custom-build .custom-form__textarea:focus {
+  outline: none;
+  border-color: var(--color-ink);
+}
+
+.page-custom-build .custom-form__input.is-invalid,
+.page-custom-build .custom-form__select.is-invalid,
+.page-custom-build .custom-form__textarea.is-invalid {
+  border-color: #c0392b;
+}
+
+.page-custom-build .custom-form__error {
+  font-size: 0.8rem;
+  color: #c0392b;
+  min-height: 1.1em;
+}
+
+/* Checkbox */
+.page-custom-build .custom-form__field--check {
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.page-custom-build .custom-form__check-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.page-custom-build .custom-form__checkbox {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  margin-top: 0.1em;
+  accent-color: var(--color-ink);
+  cursor: pointer;
+}
+
+.page-custom-build .custom-form__check-text {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(21, 21, 21, 0.7);
+}
+
+/* Submit */
+.page-custom-build .custom-form__submit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.page-custom-build .custom-form__submit-note {
+  font-size: 0.8rem;
+  color: var(--color-warm-grey);
+  min-height: 1.2em;
+}
+
+/* ============================================================
+   CUSTOM BUILD — ESCALA COMPACTA
+   Continuidad visual con la home
+   ============================================================ */
+
+.page-custom-build {
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+   VOLANTAS
+   ============================================================ */
+
+.page-custom-build .custom-eyebrow {
+  margin-bottom: 0.75rem;
+
+  font-size: var(--cb-small);
+  letter-spacing: 0.16em;
+}
+
+/* ============================================================
+   TÍTULOS GENERALES
+   ============================================================ */
+
+.page-custom-build .custom-promise__title,
+.page-custom-build .custom-process__title,
+.page-custom-build .custom-config__title,
+.page-custom-build .custom-includes__title,
+.page-custom-build .custom-projects__title,
+.page-custom-build .custom-faq__title,
+.page-custom-build .custom-contact__title {
+  font-size: var(--cb-title-section);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.page-custom-build .custom-craft__title,
+.page-custom-build .custom-final-cta__title {
+  font-size: var(--cb-title-feature);
+  line-height: 1.08;
+}
+
+/* ============================================================
+   TEXTOS GENERALES
+   ============================================================ */
+
+.page-custom-build .custom-promise__copy,
+.page-custom-build .custom-config__lead,
+.page-custom-build .custom-craft__text,
+.page-custom-build .custom-contact__lead {
+  font-size: var(--cb-body);
+  line-height: 1.65;
+}
+
+.page-custom-build .custom-timeline__desc,
+.page-custom-build .custom-benefits__desc,
+.page-custom-build .custom-accordion__body {
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.page-custom-build .custom-hero {
+  min-height: clamp(620px, 82svh, 760px);
+}
+
+.page-custom-build .custom-hero__col--text {
+  align-items: center;
+
+  padding:
+    clamp(6rem, 10vh, 7.5rem)
+    var(--cb-side)
+    clamp(2.5rem, 5vh, 3.5rem);
+}
+
+.page-custom-build .custom-hero__content {
+  max-width: 420px;
+}
+
+.page-custom-build .custom-hero__title {
+  margin-bottom: 1.25rem;
+
+  font-size: var(--cb-title-hero);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+
+.page-custom-build .custom-hero__desc {
+  max-width: 30ch;
+  margin-bottom: 1.75rem;
+
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  line-height: 1.45;
+}
+
+.page-custom-build .custom-hero__meta {
+  gap: 0.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.page-custom-build .custom-hero__meta-label {
+  font-size: 0.7rem;
+}
+
+.page-custom-build .custom-hero__price {
+  font-size: 0.9rem;
+}
+
+.page-custom-build .custom-hero__actions {
+  margin-bottom: 0.85rem;
+}
+
+.page-custom-build .custom-hero__microtext {
+  font-size: 0.7rem;
+}
+
+/* ============================================================
+   PROMESA
+   ============================================================ */
+
+.page-custom-build .custom-promise__head {
+  max-width: 560px;
+
+  margin-bottom: clamp(2.25rem, 4vw, 3.5rem);
+}
+
+.page-custom-build .custom-promise__media {
+  margin-bottom: clamp(1.75rem, 3vw, 2.75rem);
+}
+
+/* ============================================================
+   PROCESO
+   ============================================================ */
+
+.page-custom-build .custom-process__inner {
+  gap: clamp(2.5rem, 4vw, 4rem);
+}
+
+.page-custom-build .custom-process__head {
+  margin-bottom: clamp(2rem, 3.5vw, 3rem);
+}
+
+.page-custom-build .custom-process__right {
+  max-height: 640px;
+}
+
+.page-custom-build .custom-timeline__item {
+  gap: 1.15rem;
+}
+
+.page-custom-build .custom-timeline__body {
+  padding-bottom: 1.8rem;
+}
+
+.page-custom-build .custom-timeline__heading {
+  margin-bottom: 0.35rem;
+
+  font-size: var(--cb-title-small);
+}
+
+.page-custom-build .custom-timeline__line {
+  min-height: 2.2rem;
+}
+
+/* ============================================================
+   CONFIGURADOR
+   ============================================================ */
+
+.page-custom-build .custom-config__head {
+  max-width: 560px;
+
+  margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.page-custom-build .custom-config__title {
+  margin-bottom: 0.75rem;
+}
+
+.page-custom-build .custom-config__layout {
+  gap: clamp(2.5rem, 4vw, 4rem);
+}
+
+.page-custom-build .custom-config__summary {
+  padding: 1.1rem 1.25rem;
+}
+
+.page-custom-build .custom-config__summary-label {
+  margin-bottom: 0.75rem;
+
+  font-size: 0.64rem;
+}
+
+.page-custom-build .custom-config__summary-row dt {
+  font-size: 0.66rem;
+}
+
+.page-custom-build .custom-config__summary-row dd {
+  font-size: 0.82rem;
+}
+
+.page-custom-build .custom-config__group {
+  margin-bottom: 1.5rem;
+}
+
+.page-custom-build .custom-config__group-label {
+  gap: 0.6rem;
+
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.6rem;
+
+  font-size: 0.7rem;
+}
+
+.page-custom-build .custom-config__btn {
+  min-height: 40px;
+
+  padding: 0.6rem 0.95rem;
+
+  font-size: 0.78rem;
+}
+
+.page-custom-build .custom-config__btn--texture {
+  padding: 0.6rem;
+}
+
+.page-custom-build .custom-config__texture {
+  width: 42px;
+  height: 42px;
+}
+
+.page-custom-build .custom-config__option-name {
+  font-size: 0.82rem;
+}
+
+.page-custom-build .custom-config__option-sub {
+  font-size: 0.68rem;
+}
+
+.page-custom-build .custom-config__footer {
+  margin-top: 1.75rem;
+  padding-top: 1.4rem;
+}
+
+.page-custom-build .custom-config__footer-note {
+  margin-bottom: 1.2rem;
+
+  font-size: 0.84rem;
+}
+
+/* ============================================================
+   BLOQUE EMOCIONAL
+   ============================================================ */
+
+.page-custom-build .custom-craft {
+  min-height: clamp(480px, 60vh, 640px);
+}
+
+.page-custom-build .custom-craft__content {
+  padding-top: clamp(3.5rem, 6vw, 5rem);
+  padding-bottom: clamp(3.5rem, 6vw, 5rem);
+}
+
+.page-custom-build .custom-craft__title {
+  max-width: 15ch;
+
+  margin-bottom: 1.1rem;
+}
+
+/* ============================================================
+   QUÉ INCLUYE
+   ============================================================ */
+
+.page-custom-build .custom-includes__head {
+  margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.page-custom-build .custom-benefits {
+  gap:
+    clamp(1.75rem, 3vw, 2.5rem)
+    clamp(1.5rem, 3vw, 2.75rem);
+}
+
+.page-custom-build .custom-benefits__item {
+  gap: 0.75rem;
+}
+
+.page-custom-build .custom-benefits__heading {
+  font-size: 0.92rem;
+}
+
+/* ============================================================
+   PROYECTOS
+   ============================================================ */
+
+.page-custom-build .custom-projects__head {
+  margin-bottom: clamp(2.25rem, 4vw, 3.5rem);
+}
+
+.page-custom-build .custom-project-card {
+  gap: 0.75rem;
+}
+
+.page-custom-build .custom-project-card__name {
+  font-size: 0.92rem;
+}
+
+.page-custom-build .custom-project-card__maker {
+  margin-bottom: 0.4rem;
+
+  font-size: 0.72rem;
+}
+
+.page-custom-build .custom-project-card__tags li {
+  padding: 0.25rem 0.55rem;
+
+  font-size: 0.62rem;
+}
+
+.page-custom-build .custom-projects__controls {
+  margin-top: 1.5rem;
+}
+
+.page-custom-build .custom-projects__btn {
+  width: 42px;
+  height: 42px;
+
+  font-size: 1rem;
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+
+.page-custom-build .custom-faq__head {
+  margin-bottom: clamp(2rem, 3vw, 3rem);
+}
+
+.page-custom-build .custom-accordion__trigger {
+  padding: 1.05rem 0;
+
+  font-size: 0.92rem;
+}
+
+.page-custom-build .custom-accordion__body {
+  padding-bottom: 1.2rem;
+}
+
+/* ============================================================
+   CTA FINAL
+   ============================================================ */
+
+.page-custom-build .custom-final-cta {
+  min-height: clamp(420px, 55vh, 580px);
+}
+
+.page-custom-build .custom-final-cta__content {
+  max-width: 620px;
+}
+
+.page-custom-build .custom-final-cta__title {
+  max-width: 18ch;
+  margin: 0 auto 1.5rem;
+}
+
+/* ============================================================
+   CONTACTO
+   ============================================================ */
+
+.page-custom-build .custom-contact__inner {
+  gap: clamp(2.5rem, 4vw, 4rem);
+}
+
+.page-custom-build .custom-contact__lead {
+  margin-bottom: 1.5rem;
+}
+
+.page-custom-build .custom-form,
+.page-custom-build .custom-form__row {
+  gap: 1rem;
+}
+
+.page-custom-build .custom-form__input,
+.page-custom-build .custom-form__select,
+.page-custom-build .custom-form__textarea {
+  padding: 0.75rem 0.9rem;
+
+  font-size: 0.86rem;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 640px) {
+  body.page-custom-build {
+    --cb-section: 4rem;
+    --cb-side: 1.25rem;
+
+    --cb-title-hero: clamp(3rem, 14vw, 4.8rem);
+    --cb-title-section: clamp(1.75rem, 7.5vw, 2.3rem);
+    --cb-title-feature: clamp(2rem, 8vw, 2.75rem);
+  }
+
+  .page-custom-build .custom-hero {
+    min-height: auto;
+
+    grid-template-rows: auto auto;
+  }
+
+  .page-custom-build .custom-hero__col--text {
+    padding:
+      6rem
+      var(--cb-side)
+      2.25rem;
+  }
+
+  .page-custom-build .custom-hero__col--media {
+    min-height: 0;
+    max-height: none;
+
+    aspect-ratio: 16 / 10;
+  }
+
+  .page-custom-build .custom-hero__title {
+    margin-bottom: 1rem;
+  }
+
+  .page-custom-build .custom-hero__desc {
+    margin-bottom: 1.4rem;
+  }
+
+  .page-custom-build .custom-promise__head,
+  .page-custom-build .custom-process__head,
+  .page-custom-build .custom-config__head,
+  .page-custom-build .custom-includes__head,
+  .page-custom-build .custom-projects__head,
+  .page-custom-build .custom-faq__head {
+    margin-bottom: 2rem;
+  }
+
+  .page-custom-build .custom-process__inner,
+  .page-custom-build .custom-config__layout {
+    gap: 2.25rem;
+  }
+
+  .page-custom-build .custom-craft {
+    min-height: 520px;
+  }
+
+  .page-custom-build .custom-final-cta {
+    min-height: 440px;
+  }
+}
+
+/* ============================================================
+   ALINEACIÓN GENERAL
+   PROYECTOS + PREGUNTAS FRECUENTES
+   ============================================================ */
+
+body.page-custom-build {
+  /*
+    Distancia real entre el borde de la pantalla
+    y el comienzo del contenedor de 1200px.
+  */
+  --cb-page-edge: max(
+    var(--cb-side),
+    calc((100vw - var(--cb-max)) / 2)
+  );
+}
+
+/* ============================================================
+   INSTRUMENTOS CONSTRUIDOS
+   ============================================================ */
+
+/*
+  El encabezado queda alineado con el resto
+  de los contenedores de la página.
+*/
+.page-custom-build .custom-projects__head {
+  width: min(
+    calc(100% - (var(--cb-side) * 2)),
+    var(--cb-max)
+  );
+
+  max-width: none;
+
+  margin:
+    0
+    auto
+    clamp(2.25rem, 4vw, 3.5rem);
+
+  padding: 0;
+}
+
+/*
+  Limitamos el ancho visual del título,
+  pero mantenemos correctamente alineado su contenedor.
+*/
+.page-custom-build .custom-projects__title {
+  max-width: 640px;
+}
+
+/*
+  El carrusel sigue llegando hacia los costados,
+  pero la primera y última tarjeta respetan
+  el mismo margen que el resto de la web.
+*/
+.page-custom-build .custom-projects__track {
+  padding-left: var(--cb-page-edge);
+  padding-right: var(--cb-page-edge);
+
+  scroll-padding-left: var(--cb-page-edge);
+}
+
+/*
+  Los botones también quedan dentro
+  del contenedor general.
+*/
+.page-custom-build .custom-projects__controls {
+  width: min(
+    calc(100% - (var(--cb-side) * 2)),
+    var(--cb-max)
+  );
+
+  margin:
+    1.5rem
+    auto
+    0;
+
+  padding: 0;
+}
+
+/* ============================================================
+   PREGUNTAS FRECUENTES
+   ============================================================ */
+
+/*
+  Antes estaba limitada a 760px y centrada.
+  Ahora comparte el contenedor de 1200px.
+*/
+.page-custom-build .custom-faq__inner {
+  width: 100%;
+  max-width: var(--cb-max);
+  margin: 0 auto;
+}
+
+/*
+  Encabezado y acordeón ocupan el ancho
+  disponible del contenedor.
+*/
+.page-custom-build .custom-faq__head,
+.page-custom-build .custom-accordion {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/*
+  La respuesta no se extiende demasiado,
+  aunque la línea divisoria sí ocupa todo el ancho.
+*/
+.page-custom-build .custom-accordion__body {
+  max-width: 68ch;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 640px) {
+  .page-custom-build .custom-projects__head {
+    width: calc(100% - (var(--cb-side) * 2));
+  }
+
+  .page-custom-build .custom-projects__track {
+    padding-left: var(--cb-side);
+    padding-right: var(--cb-side);
+
+    scroll-padding-left: var(--cb-side);
+  }
+
+  .page-custom-build .custom-projects__controls {
+    width: calc(100% - (var(--cb-side) * 2));
+  }
+
+  .page-custom-build .custom-faq__inner {
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   CONFIGURADOR — VERSIÓN COMPACTA
+   ============================================================ */
+
+.page-custom-build .custom-config {
+  padding-top: clamp(3.5rem, 5vw, 4.75rem);
+  padding-bottom: clamp(3.5rem, 5vw, 4.75rem);
+}
+
+.page-custom-build .custom-config__head {
+  max-width: 540px;
+  margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.page-custom-build .custom-config__layout {
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+/* Imagen más angosta que el panel de opciones */
+
+@media (min-width: 881px) {
+  .page-custom-build .custom-config__layout {
+    grid-template-columns:
+      minmax(300px, 0.78fr)
+      minmax(440px, 1.22fr);
+
+    align-items: start;
+  }
+
+  .page-custom-build .custom-config__visual {
+    width: 100%;
+    max-width: 430px;
+
+    position: sticky;
+    top: calc(var(--header-h, 70px) + 1.25rem);
+  }
+}
+
+/* Contenedor visual */
+
+.page-custom-build .custom-config__guitar-wrap {
+  position: relative;
+
+  width: 100%;
+  height: min(58vh, 520px);
+  min-height: 420px;
+
+  aspect-ratio: auto;
+  margin-bottom: 1rem;
+
+  overflow: hidden;
+
+  background: var(--color-warm-white);
+  border: 1px solid rgba(21, 21, 21, 0.08);
+  border-radius: 4px;
+}
+
+/* Guitarra */
+
+.page-custom-build .custom-config__guitar-img {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  padding: clamp(0.75rem, 2vw, 1.5rem);
+
+  object-fit: contain;
+  object-position: center;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.45s var(--ease);
+}
+
+.page-custom-build .custom-config__guitar-img.is-changing {
+  opacity: 0;
+  transform: scale(0.985);
+}
+
+/* Acabado superpuesto */
+
+.page-custom-build .custom-config__guitar-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  opacity: 0;
+  pointer-events: none;
+
+  mix-blend-mode: multiply;
+
+  transition:
+    opacity 0.4s ease,
+    background 0.4s ease;
+}
+
+.page-custom-build .custom-config__guitar-overlay.has-finish {
+  opacity: 1;
+}
+
+/* Detalle del clavijero */
+
+.page-custom-build .custom-config__tuner-preview {
+  position: absolute;
+  z-index: 4;
+
+  right: 0.8rem;
+  bottom: 0.8rem;
+
+  width: 118px;
+
+  padding: 0.4rem;
+
+  border: 1px solid rgba(250, 248, 242, 0.22);
+  border-radius: 3px;
+
+  background: rgba(21, 21, 21, 0.84);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+
+  backdrop-filter: blur(8px);
+}
+
+.page-custom-build .custom-config__tuner-label {
+  display: block;
+
+  padding: 0.15rem 0.15rem 0.4rem;
+
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: rgba(250, 248, 242, 0.65);
+}
+
+.page-custom-build .custom-config__tuner-img {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 4 / 3;
+
+  object-fit: cover;
+  border-radius: 2px;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.4s var(--ease);
+}
+
+.page-custom-build .custom-config__tuner-img.is-changing {
+  opacity: 0;
+  transform: scale(0.97);
+}
+
+/* Resumen de tres columnas */
+
+.page-custom-build .custom-config__summary {
+  padding: 1rem 1.15rem;
+}
+
+.page-custom-build .custom-config__summary-list {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* Maderas en una sola fila */
+
+.page-custom-build .custom-config__options--textures {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.page-custom-build .custom-config__btn--texture {
+  width: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.45rem;
+
+  padding: 0.55rem;
+}
+
+.page-custom-build .custom-config__texture {
+  width: 100%;
+  height: 52px;
+}
+
+.page-custom-build .custom-config__option-name {
+  font-size: 0.78rem;
+}
+
+.page-custom-build .custom-config__option-sub {
+  font-size: 0.62rem;
+  line-height: 1.35;
+}
+
+/* Menos altura entre grupos */
+
+.page-custom-build .custom-config__group {
+  margin-bottom: 1.25rem;
+}
+
+.page-custom-build .custom-config__footer {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 640px) {
+  .page-custom-build .custom-config__guitar-wrap {
+    height: 420px;
+    min-height: 0;
+  }
+
+  .page-custom-build .custom-config__tuner-preview {
+    width: 102px;
+  }
+
+  .page-custom-build .custom-config__summary-list {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+
+  .page-custom-build .custom-config__summary-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    align-items: baseline;
+  }
+
+  .page-custom-build .custom-config__options--textures {
+    grid-template-columns: 1fr;
+  }
+
+  .page-custom-build .custom-config__btn--texture {
+    display: grid;
+    grid-template-columns: 58px 1fr;
+    align-items: center;
+  }
+
+  .page-custom-build .custom-config__texture {
+    grid-row: 1 / 3;
+
+    width: 58px;
+    height: 58px;
+  }
+
+}
+/* ============================================================
+   CONFIGURADOR — CORRECCIÓN DE ESTRUCTURA
+   ============================================================ */
+
+.page-custom-build .custom-config__visual,
+.page-custom-build .custom-config__panel {
+  min-width: 0;
+}
+
+.page-custom-build .custom-config__summary {
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 881px) {
+  .page-custom-build .custom-config__layout {
+    grid-template-columns:
+      minmax(320px, 420px)
+      minmax(0, 1fr);
+
+    gap: clamp(2.5rem, 5vw, 5rem);
+    align-items: start;
+  }
+
+  .page-custom-build .custom-config__visual {
+    width: 100%;
+    max-width: none;
+  }
+
+  .page-custom-build .custom-config__panel {
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   EL RESULTADO — SECUENCIA VISUAL
+   ============================================================ */
+
+.page-custom-build .custom-result {
+  position: relative;
+
+  padding:
+    var(--cb-section)
+    var(--cb-side);
+
+  overflow: hidden;
+
+  background: var(--color-bg-light);
+  color: var(--color-ink);
+}
+
+.page-custom-build .custom-result__inner {
+  width: 100%;
+  max-width: var(--cb-max);
+
+  margin: 0 auto;
+}
+
+/* ============================================================
+   ENCABEZADO
+   ============================================================ */
+
+.page-custom-build .custom-result__head {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(240px, 0.55fr);
+
+  align-items: start;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+
+  margin-bottom: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.page-custom-build .custom-result__heading {
+  min-width: 0;
+}
+
+.page-custom-build .custom-result__title {
+  max-width: 16ch;
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 4.8vw, 4.6rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+
+  color: var(--color-ink);
+}
+
+.page-custom-build .custom-result__title span,
+.page-custom-build .custom-result__title strong {
+  display: block;
+}
+
+.page-custom-build .custom-result__title strong {
+  font-weight: 650;
+}
+
+.page-custom-build .custom-result__lead {
+  max-width: 28ch;
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.25vw, 1.15rem);
+  line-height: 1.55;
+
+  color: rgba(21, 21, 21, 0.62);
+}
+
+/* ============================================================
+   SECUENCIA DESKTOP
+   ============================================================ */
+
+.page-custom-build .custom-result__sequence {
+  position: relative;
+
+  width: 100%;
+  min-height: 620px;
+  aspect-ratio: 16 / 8.6;
+
+  overflow: hidden;
+
+  border-radius: 4px;
+  background: var(--color-ink);
+}
+
+.page-custom-build .custom-result__image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition:
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (hover: hover) {
+  .page-custom-build .custom-result__sequence:hover
+  .custom-result__image {
+    transform: scale(1.015);
+  }
+}
+
+/* Degradado general */
+
+.page-custom-build .custom-result__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(12, 12, 12, 0.02) 20%,
+      rgba(12, 12, 12, 0.18) 58%,
+      rgba(12, 12, 12, 0.82) 100%
+    );
+}
+
+/* Líneas divisorias */
+
+.page-custom-build .custom-result__dividers {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+.page-custom-build .custom-result__dividers span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  width: 1px;
+
+  background: rgba(250, 248, 242, 0.2);
+}
+
+.page-custom-build .custom-result__dividers span:first-child {
+  left: 33.333%;
+}
+
+.page-custom-build .custom-result__dividers span:last-child {
+  left: 66.666%;
+}
+
+/* ============================================================
+   TEXTOS SOBRE LA IMAGEN
+   ============================================================ */
+
+.page-custom-build .custom-result__steps {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.page-custom-build .custom-result__step {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: clamp(1.6rem, 2.8vw, 2.4rem);
+
+  color: var(--color-warm-white);
+}
+
+.page-custom-build .custom-result__step-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  margin-bottom: 0.65rem;
+}
+
+.page-custom-build .custom-result__number {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+
+  color: var(--color-wood-brown);
+}
+
+.page-custom-build .custom-result__category {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  color: rgba(250, 248, 242, 0.72);
+}
+
+.page-custom-build .custom-result__step-title {
+  max-width: 18ch;
+
+  margin: 0 0 0.5rem;
+
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.9vw, 1.55rem);
+  font-weight: 550;
+  line-height: 1.1;
+
+  color: var(--color-warm-white);
+}
+
+.page-custom-build .custom-result__step-copy {
+  max-width: 28ch;
+  margin: 0;
+
+  font-size: clamp(0.8rem, 1vw, 0.92rem);
+  line-height: 1.5;
+
+  color: rgba(250, 248, 242, 0.72);
+}
+
+/* ============================================================
+   CIERRE
+   ============================================================ */
+
+.page-custom-build .custom-result__footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.page-custom-build .custom-result__closing {
+  max-width: 420px;
+  margin: 0 0 0 auto;
+
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
+  font-weight: 400;
+  line-height: 1.3;
+  text-align: right;
+
+  color: rgba(21, 21, 21, 0.68);
+}
+
+.page-custom-build .custom-result__closing strong {
+  display: block;
+
+  font-weight: 650;
+
+  color: var(--color-ink);
+}
+
+.page-custom-build .custom-result__index {
+  order: -1;
+
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+
+  color: var(--color-warm-grey);
+}
+
+/* La versión mobile permanece oculta en desktop */
+
+.page-custom-build .custom-result__mobile {
+  display: none;
+}
+
+/* ============================================================
+   ANIMACIÓN PROGRESIVA
+   Solo se activa cuando JavaScript agrega .is-enhanced
+   ============================================================ */
+
+.page-custom-build
+.custom-result.is-enhanced:not(.is-visible)
+.custom-result__head,
+
+.page-custom-build
+.custom-result.is-enhanced:not(.is-visible)
+.custom-result__sequence,
+
+.page-custom-build
+.custom-result.is-enhanced:not(.is-visible)
+.custom-result__footer {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+.page-custom-build .custom-result__head,
+.page-custom-build .custom-result__sequence,
+.page-custom-build .custom-result__footer {
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.page-custom-build .custom-result__sequence {
+  transition-delay: 0.12s;
+}
+
+.page-custom-build .custom-result__footer {
+  transition-delay: 0.2s;
+}
+
+.page-custom-build
+.custom-result.is-enhanced
+.custom-result__step:not(.is-visible),
+
+.page-custom-build
+.custom-result.is-enhanced
+.custom-result-card:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.page-custom-build .custom-result__step,
+.page-custom-build .custom-result-card {
+  transition:
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 880px) {
+  .page-custom-build .custom-result__head {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .page-custom-build .custom-result__lead {
+    max-width: 48ch;
+  }
+
+  .page-custom-build .custom-result__sequence {
+    min-height: 500px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .page-custom-build .custom-result__step {
+    padding: 1.25rem;
+  }
+
+  .page-custom-build .custom-result__step-copy {
+    display: none;
+  }
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 640px) {
+  .page-custom-build .custom-result {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .page-custom-build .custom-result__head {
+    margin-bottom: 2rem;
+  }
+
+  .page-custom-build .custom-result__title {
+    max-width: 18ch;
+  }
+
+  /*
+    En mobile ocultamos la panorámica completa
+    para que los objetos no queden diminutos.
+  */
+
+  .page-custom-build .custom-result__sequence {
+    display: none;
+  }
+
+  .page-custom-build .custom-result__mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .page-custom-build .custom-result-card {
+    position: relative;
+
+    min-height: 360px;
+    aspect-ratio: 3 / 4;
+
+    display: flex;
+    align-items: flex-end;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    background-image: var(--result-image);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+  }
+
+  /*
+    Los tres bloques reutilizan la misma imagen,
+    mostrando un tercio diferente.
+  */
+
+  .page-custom-build .custom-result-card--one {
+    background-position: left center;
+  }
+
+  .page-custom-build .custom-result-card--two {
+    background-position: center center;
+  }
+
+  .page-custom-build .custom-result-card--three {
+    background-position: right center;
+  }
+
+  .page-custom-build .custom-result-card__overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(15, 15, 15, 0.02) 20%,
+        rgba(15, 15, 15, 0.2) 55%,
+        rgba(15, 15, 15, 0.88) 100%
+      );
+  }
+
+  .page-custom-build .custom-result-card__content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    padding: 1.4rem;
+
+    color: var(--color-warm-white);
+  }
+
+  .page-custom-build .custom-result-card__number {
+    display: block;
+
+    margin-bottom: 0.45rem;
+
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+
+    color: var(--color-wood-brown);
+  }
+
+  .page-custom-build .custom-result-card__category {
+    margin: 0 0 0.55rem;
+
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: rgba(250, 248, 242, 0.65);
+  }
+
+  .page-custom-build .custom-result-card h3 {
+    max-width: 17ch;
+
+    margin: 0 0 0.65rem;
+
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 550;
+    line-height: 1.12;
+  }
+
+  .page-custom-build .custom-result-card p:last-child {
+    max-width: 31ch;
+    margin: 0;
+
+    font-size: 0.78rem;
+    line-height: 1.55;
+
+    color: rgba(250, 248, 242, 0.68);
+  }
+
+  .page-custom-build .custom-result__footer {
+    align-items: flex-start;
+    flex-direction: column;
+
+    margin-top: 1.5rem;
+  }
+
+  .page-custom-build .custom-result__index {
+    order: 0;
+  }
+
+  .page-custom-build .custom-result__closing {
+    max-width: 300px;
+    margin: 0;
+
+    text-align: left;
+  }
+}
+
+/* ============================================================
+   ACCESIBILIDAD — REDUCIR MOVIMIENTO
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .page-custom-build .custom-result__image,
+  .page-custom-build .custom-result__head,
+  .page-custom-build .custom-result__sequence,
+  .page-custom-build .custom-result__footer,
+  .page-custom-build .custom-result__step,
+  .page-custom-build .custom-result-card {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* ============================================================
+   EL RESULTADO — AJUSTE DE ESCALA Y MÁRGENES
+   ============================================================ */
+
+/*
+  Esta sección puede ser un poco más ancha que el resto
+  para darle protagonismo a la secuencia visual.
+*/
+.page-custom-build .custom-result {
+  padding-top: clamp(3.75rem, 5vw, 5rem);
+  padding-bottom: clamp(3.75rem, 5vw, 5rem);
+
+  padding-left: clamp(1.25rem, 2vw, 2rem);
+  padding-right: clamp(1.25rem, 2vw, 2rem);
+}
+
+.page-custom-build .custom-result__inner {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+/* Encabezado más compacto */
+
+.page-custom-build .custom-result__head {
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(260px, 0.55fr);
+
+  align-items: end;
+  gap: clamp(2rem, 5vw, 5rem);
+
+  margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+/* Recuperamos una escala similar a la home */
+
+.page-custom-build .custom-result__title {
+  max-width: 18ch;
+
+  font-size: clamp(2rem, 3.5vw, 3.35rem);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+.page-custom-build .custom-result__lead {
+  max-width: 34ch;
+
+  font-size: clamp(0.82rem, 1vw, 0.95rem);
+  line-height: 1.6;
+}
+
+/*
+  La imagen sigue siendo más grande que antes,
+  pero sin ocupar una altura excesiva.
+*/
+.page-custom-build .custom-result__sequence {
+  width: 100%;
+  min-height: 540px;
+  aspect-ratio: 16 / 7.5;
+}
+
+/* Textos dentro de la imagen */
+
+.page-custom-build .custom-result__step {
+  padding: clamp(1.35rem, 2vw, 1.9rem);
+}
+
+.page-custom-build .custom-result__step-title {
+  max-width: 20ch;
+
+  font-size: clamp(1rem, 1.45vw, 1.3rem);
+  line-height: 1.12;
+}
+
+.page-custom-build .custom-result__step-copy {
+  max-width: 30ch;
+
+  font-size: clamp(0.7rem, 0.85vw, 0.8rem);
+  line-height: 1.55;
+}
+
+/* Tablet */
+
+@media (max-width: 880px) {
+  .page-custom-build .custom-result__head {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .page-custom-build .custom-result__title {
+    max-width: 18ch;
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .page-custom-build .custom-result__lead {
+    max-width: 44ch;
+  }
+
+  .page-custom-build .custom-result__sequence {
+    min-height: 460px;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 640px) {
+  .page-custom-build .custom-result {
+    padding-left: var(--cb-side);
+    padding-right: var(--cb-side);
+  }
+
+  .page-custom-build .custom-result__title {
+    font-size: clamp(1.85rem, 8vw, 2.4rem);
+  }
+}
+
+/* ============================================================
+   PROYECTOS — GALERÍA EDITORIAL
+   ============================================================ */
+
+.page-custom-build .custom-projects {
+  position: relative;
+
+  padding:
+    clamp(4rem, 6vw, 5.75rem)
+    0
+    clamp(3.5rem, 5vw, 5rem);
+
+  overflow: hidden;
+
+  background: var(--color-warm-white);
+  color: var(--color-ink);
+}
+
+/* ============================================================
+   ENCABEZADO
+   ============================================================ */
+
+.page-custom-build .custom-projects__head {
+  width: min(
+    calc(100% - (var(--cb-side) * 2)),
+    var(--cb-max)
+  );
+
+  max-width: none;
+
+  margin:
+    0
+    auto
+    clamp(3rem, 5vw, 4.5rem);
+
+  padding: 0;
+}
+
+.page-custom-build .custom-projects__title {
+  max-width: 900px;
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.7rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+
+  color: var(--color-ink);
+}
+
+.page-custom-build .custom-projects__title em {
+  font-style: italic;
+  font-weight: 650;
+}
+
+/* ============================================================
+   VIEWPORT Y TRACK
+   ============================================================ */
+
+.page-custom-build .custom-projects__viewport {
+  position: relative;
+  width: 100%;
+}
+
+.page-custom-build .custom-projects__track {
+  display: flex;
+  align-items: flex-start;
+
+  gap: clamp(1rem, 1.8vw, 1.75rem);
+
+  padding:
+    0
+    var(--cb-page-edge)
+    1.5rem;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-padding-left: var(--cb-page-edge);
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.page-custom-build .custom-projects__track::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============================================================
+   TARJETAS
+   ============================================================ */
+
+.page-custom-build .custom-project-card {
+  --project-width: 310px;
+  --project-height: 520px;
+
+  position: relative;
+  z-index: 1;
+
+  flex: 0 0 var(--project-width);
+  width: var(--project-width);
+
+  /*
+    El espacio inferior permite que la ficha
+    sobresalga de la imagen sin cortarse.
+  */
+  padding-bottom: 120px;
+
+  scroll-snap-align: start;
+
+  transition:
+    z-index 0s linear 0.35s,
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.page-custom-build .custom-project-card:hover,
+.page-custom-build .custom-project-card:focus-within,
+.page-custom-build .custom-project-card.is-open {
+  z-index: 20;
+
+  transition-delay: 0s;
+}
+
+/* Variantes de tamaño */
+
+.page-custom-build .custom-project-card--large {
+  --project-width: 320px;
+  --project-height: 540px;
+}
+
+.page-custom-build .custom-project-card--medium {
+  --project-width: 280px;
+  --project-height: 440px;
+}
+
+.page-custom-build .custom-project-card--tall {
+  --project-width: 330px;
+  --project-height: 610px;
+}
+
+/* Desplazamientos editoriales */
+
+.page-custom-build .custom-project-card--offset-sm {
+  margin-top: 45px;
+}
+
+.page-custom-build .custom-project-card--offset-md {
+  margin-top: 90px;
+}
+
+/* ============================================================
+   IMAGEN
+   ============================================================ */
+
+.page-custom-build .custom-project-card__trigger {
+  width: 100%;
+  padding: 0;
+
+  display: block;
+
+  border: 0;
+  background: transparent;
+
+  text-align: left;
+  cursor: pointer;
+}
+
+.page-custom-build .custom-project-card__media {
+  position: relative;
+
+  width: 100%;
+  height: var(--project-height);
+
+  display: block;
+
+  overflow: hidden;
+
+  border-radius: 0;
+
+  background: #dedbd4;
+}
+
+.page-custom-build .custom-project-card__media::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  pointer-events: none;
+
+  background: rgba(15, 15, 15, 0);
+
+  transition:
+    background 0.45s ease;
+}
+
+.page-custom-build .custom-project-card__media img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transform: scale(1);
+
+  transition:
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.5s ease;
+}
+
+/* Hover de la imagen */
+
+@media (hover: hover) and (pointer: fine) {
+  .page-custom-build
+  .custom-project-card:hover
+  .custom-project-card__media img,
+
+  .page-custom-build
+  .custom-project-card:focus-within
+  .custom-project-card__media img {
+    transform: scale(1.035);
+  }
+
+  .page-custom-build
+  .custom-project-card:hover
+  .custom-project-card__media::after,
+
+  .page-custom-build
+  .custom-project-card:focus-within
+  .custom-project-card__media::after {
+    background: rgba(15, 15, 15, 0.08);
+  }
+}
+
+/* ============================================================
+   FICHA FLOTANTE
+   ============================================================ */
+
+.page-custom-build .custom-project-card__detail {
+  position: absolute;
+  z-index: 5;
+
+  top: calc(var(--project-height) - 105px);
+  left: calc(100% - 72px);
+
+  width: 285px;
+
+  padding: 1.15rem 1.25rem;
+
+  border: 1px solid rgba(250, 248, 242, 0.45);
+
+  background: #191918;
+  color: var(--color-warm-white);
+
+  box-shadow:
+    0 22px 50px rgba(0, 0, 0, 0.18);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform:
+    translateY(18px)
+    scale(0.985);
+
+  transform-origin: top left;
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease,
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Tarjetas cercanas al borde derecho */
+
+.page-custom-build
+.custom-project-card--detail-left
+.custom-project-card__detail {
+  left: auto;
+  right: calc(100% - 72px);
+
+  transform-origin: top right;
+}
+
+/* Estado abierto */
+
+.page-custom-build
+.custom-project-card:hover
+.custom-project-card__detail,
+
+.page-custom-build
+.custom-project-card:focus-within
+.custom-project-card__detail,
+
+.page-custom-build
+.custom-project-card.is-open
+.custom-project-card__detail {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+/* Título de la ficha */
+
+.page-custom-build .custom-project-card__detail h3 {
+  margin: 0;
+  padding-bottom: 0.75rem;
+
+  border-bottom: 1px solid rgba(250, 248, 242, 0.48);
+
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 550;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+
+  color: var(--color-warm-white);
+}
+
+/* Datos */
+
+.page-custom-build .custom-project-card__detail dl {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+
+  margin: 0;
+  padding-top: 0.85rem;
+}
+
+.page-custom-build .custom-project-card__detail dl div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+
+  font-size: 0.76rem;
+  line-height: 1.35;
+}
+
+.page-custom-build .custom-project-card__detail dt {
+  color: rgba(250, 248, 242, 0.52);
+}
+
+.page-custom-build .custom-project-card__detail dt::after {
+  content: ":";
+}
+
+.page-custom-build .custom-project-card__detail dd {
+  margin: 0;
+
+  color: rgba(250, 248, 242, 0.92);
+}
+
+/* ============================================================
+   CONTROLES
+   ============================================================ */
+
+.page-custom-build .custom-projects__controls {
+  width: min(
+    calc(100% - (var(--cb-side) * 2)),
+    var(--cb-max)
+  );
+
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+
+  margin:
+    clamp(0.5rem, 2vw, 1.25rem)
+    auto
+    0;
+
+  padding: 0;
+}
+
+.page-custom-build .custom-projects__btn {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(21, 21, 21, 0.14);
+  border-radius: 50%;
+
+  background: transparent;
+  color: var(--color-ink);
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.page-custom-build
+.custom-projects__btn:hover:not(:disabled) {
+  border-color: var(--color-ink);
+
+  background: var(--color-ink);
+  color: var(--color-warm-white);
+}
+
+.page-custom-build .custom-projects__btn:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 880px) {
+  .page-custom-build .custom-projects__title {
+    max-width: 650px;
+
+    font-size: clamp(2rem, 6vw, 3.1rem);
+  }
+
+  .page-custom-build .custom-project-card {
+    --project-width: 290px;
+    --project-height: 480px;
+
+    margin-top: 0;
+  }
+
+  .page-custom-build .custom-project-card--medium {
+    --project-width: 260px;
+    --project-height: 420px;
+
+    margin-top: 60px;
+  }
+
+  .page-custom-build .custom-project-card--tall {
+    --project-width: 300px;
+    --project-height: 540px;
+  }
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 640px) {
+  .page-custom-build .custom-projects {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .page-custom-build .custom-projects__head {
+    width: calc(100% - (var(--cb-side) * 2));
+
+    margin-bottom: 2.25rem;
+  }
+
+  .page-custom-build .custom-projects__title {
+    max-width: 18ch;
+
+    font-size: clamp(2rem, 9vw, 2.7rem);
+  }
+
+  .page-custom-build .custom-projects__track {
+    align-items: flex-start;
+
+    gap: 0.9rem;
+
+    padding-left: var(--cb-side);
+    padding-right: var(--cb-side);
+    padding-bottom: 0.5rem;
+
+    scroll-padding-left: var(--cb-side);
+    scroll-snap-type: x mandatory;
+
+    overflow-y: visible;
+  }
+
+  .page-custom-build .custom-project-card,
+  .page-custom-build .custom-project-card--large,
+  .page-custom-build .custom-project-card--medium,
+  .page-custom-build .custom-project-card--tall {
+    --project-width: min(78vw, 330px);
+    --project-height: 440px;
+
+    flex-basis: var(--project-width);
+
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+
+  .page-custom-build .custom-project-card__detail,
+  .page-custom-build
+  .custom-project-card--detail-left
+  .custom-project-card__detail {
+    position: relative;
+
+    top: auto;
+    left: auto;
+    right: auto;
+
+    width: 100%;
+    max-height: 0;
+
+    padding:
+      0
+      1.1rem;
+
+    overflow: hidden;
+
+    border: 0;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-8px);
+
+    box-shadow: none;
+
+    transition:
+      max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+      padding 0.4s ease,
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      transform 0.4s ease;
+  }
+
+  .page-custom-build
+  .custom-project-card.is-open
+  .custom-project-card__detail {
+    max-height: 260px;
+
+    padding:
+      1.1rem
+      1.1rem
+      1.25rem;
+
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+  }
+
+  /*
+    En pantallas táctiles no dejamos la ficha
+    abierta solo por :focus-within.
+  */
+  .page-custom-build
+  .custom-project-card:focus-within:not(.is-open)
+  .custom-project-card__detail {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .page-custom-build .custom-projects__controls {
+    width: calc(100% - (var(--cb-side) * 2));
+
+    justify-content: flex-start;
+
+    margin-top: 1.5rem;
+  }
+}
+
+/* ============================================================
+   MOVIMIENTO REDUCIDO
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .page-custom-build .custom-project-card,
+  .page-custom-build .custom-project-card__media img,
+  .page-custom-build .custom-project-card__detail {
+    transition: none;
+  }
+}
